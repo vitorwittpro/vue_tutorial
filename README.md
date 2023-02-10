@@ -26,3 +26,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 �
 �
 ## video: https://morioh.com/p/e60283635986
+time: 3:01:00
