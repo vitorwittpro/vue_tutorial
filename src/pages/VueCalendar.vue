@@ -6,6 +6,7 @@ const week_days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const currentDate = reactive({
   month: new Date().getMonth(),
   year: new Date().getFullYear(),
+  utc_date: new Date().getUTCDate(),
 });
 
 const currentMonthName = computed(() => {
@@ -32,6 +33,17 @@ function handleNext() {
 function handlePrev() {
   currentDate.month--;
   console.log(currentDate.month);
+}
+
+function currentDateClass(num) {
+  const calendarFullDate = new Date(
+    currentDate.year,
+    currentDate.month,
+    num
+  ).toDateString();
+  const currentFullDate = new Date().toDateString();
+
+  return calendarFullDate === currentFullDate ? "font-bold text-sky-500" : "";
 }
 </script>
 
@@ -65,6 +77,7 @@ function handlePrev() {
           style="width: 14.28%"
           v-for="num in daysInMonth(currentDate.year, currentDate.month)"
           :key="num"
+          :class="currentDateClass(num)"
         >
           {{ num }}
         </p>

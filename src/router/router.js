@@ -1,16 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import DcHeroes from "@/views/DcHeroes.vue";
-import SignIn from "@/views/SignIn.vue";
-import SignUp from "@/views/SignUp.vue";
+import Home from "@/pages/VueHome.vue";
+import DcHeroes from "@/pages/DcHeroes.vue";
+import SignIn from "@/pages/SignIn.vue";
+import SignUp from "@/pages/SignUp.vue";
 
 const routes = [
-  { path: "/", component: SignIn },
+  { path: "", component: Home },
+  { path: "/sign-in", component: SignIn },
   { path: "/sign-up", component: SignUp },
   { path: "/dc-heroes", component: DcHeroes },
   {
     path: "/calendar",
-    component: () => import("../views/VueCalendar.vue"), // lazy loading, load after clicked
+    component: () => import("../pages/VueCalendar.vue"), // lazy loading, load after clicked
   },
 ];
 
