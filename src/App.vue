@@ -1,21 +1,14 @@
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<template>
+  <div>
+    <router-link class="mr-4" to="/">Home</router-link>
+    <router-link class="mr-4" to="/dc-heroes">DC Heroes</router-link>
+    <router-link class="mr-4" to="/calendar">Calendar</router-link>
+    <router-view />
+  </div>
+</template>
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import AppHeader from "@/components/AppHeader.vue";
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
