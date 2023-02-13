@@ -1,14 +1,10 @@
 <template>
   <div>
-    <router-link class="mr-4" to="/">Home</router-link>
-    <router-link class="mr-4" to="/dc-heroes">DC Heroes</router-link>
-    <router-link class="mr-4" to="/calendar">Calendar</router-link>
+    <!-- <app-header /> -->
     <router-view />
   </div>
 </template>
 
-<script setup>
-import AppHeader from "@/components/AppHeader.vue";
-</script>
+<script setup></script>
 
 <style></style>
