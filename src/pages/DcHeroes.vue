@@ -1,5 +1,8 @@
 <script setup>
 import { reactive, ref, computed } from "vue";
+import { useThemeStore } from "@/stores/ThemeStore";
+
+const theme = useThemeStore();
 
 const dcHeroes = reactive([
   { name: "Batman" },
@@ -23,13 +26,12 @@ const addHero = () => {
 };
 
 const deleteHero = (index) => {
-  // solution 1
   dcHeroes.splice(index, 1);
 };
 </script>
 
 <template>
-  <div class="w-full flex">
+  <div class="w-full flex h-screen" :class="theme.style">
     <div class="mx-auto mt-40">
       <h1 class="text-3xl font-bold mb-10">DC Heroes: {{ heroCounter }}</h1>
       <div class="flex-column">
@@ -49,7 +51,7 @@ const deleteHero = (index) => {
         </ul>
         <form class="mt-10" @submit.prevent="addHero">
           <input
-            class="border-solid border-2 rounded-lg mr-5 mb-2 px-3 py-1 focus:outline-none"
+            class="border-solid border-2 rounded-lg mr-5 mb-2 px-3 py-1 focus:outline-none text-black"
             v-model.trim="newHero"
             placeholder="Type hero name..."
           />

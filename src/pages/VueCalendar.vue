@@ -1,5 +1,8 @@
 <script setup>
 import { computed, reactive } from "vue";
+import { useThemeStore } from "@/stores/ThemeStore";
+
+const theme = useThemeStore();
 
 const week_days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -48,7 +51,7 @@ function currentDateClass(num) {
 </script>
 
 <template>
-  <div class="w-full flex">
+  <div class="w-full flex h-screen" :class="theme.style">
     <div class="m-auto mt-20">
       <h1 class="text-3xl text-center font-bold">Vue Calendar</h1>
       <section class="flex flex-row justify-between mx-4 mt-10">
@@ -99,5 +102,3 @@ function currentDateClass(num) {
     </div>
   </div>
 </template>
-
-<style></style>
